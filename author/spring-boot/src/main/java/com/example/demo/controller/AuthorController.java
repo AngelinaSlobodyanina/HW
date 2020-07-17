@@ -50,7 +50,7 @@ public class AuthorController {
 
     @PutMapping("/authors/{id}")
     public ResponseEntity<Author> updateAuthor(@PathVariable(value = "id") Long authorId,
-                                                 @Valid @RequestBody Author authorDetails) throws ResourceNotFoundException {
+                                               @Valid @RequestBody Author authorDetails) throws ResourceNotFoundException {
         Author author = authorRepository.findById(authorId)
                 .orElseThrow(() -> new ResourceNotFoundException("Author not found for this id :: " + authorId));
 
